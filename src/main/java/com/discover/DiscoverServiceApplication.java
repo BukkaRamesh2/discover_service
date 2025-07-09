@@ -32,7 +32,7 @@ public class classname{
    
    public -- access specifier
    static -- key word
-   void -- retyurn type of method 
+   void -- return type of method 
    main -- name 
    method signature (string)
    method body 
