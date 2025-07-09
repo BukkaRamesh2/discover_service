@@ -11,12 +11,5 @@ class DiscoverServiceApplicationTests {
 	void contextLoads() {
 	}
 	
-	public static void main(String a[])
-	{
-		Address addr = new Address(1, "MG Road", "Hyderabad", "Telangana", "500081", "Active");
-		System.out.println("City: " + addr.getCity());
-        addr.setCity("Warangal");
-        System.out.println("Updated City: " + addr.getCity());
-	}
 
 }
