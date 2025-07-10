@@ -11,12 +11,12 @@ public class Employees {
 			gender;
 			status;
 	*/
-	private int employeeID;
+	private Long employeeID;
 	private String firstName;
 	private String lastName;
 	private String address;
 	private String email;
-	private String phoneNumber;
+	private Long phoneNumber;
 	private String gender;
 	private String status;
 	
@@ -24,8 +24,8 @@ public class Employees {
 		
 	}
 	
-	public Employees(int employeeID, String firstName, String lastName, 
-					String address, String email, String phoneNumber, String gender, 
+	public Employees(Long employeeID, String firstName, String lastName, 
+					String address, String email, Long phoneNumber, String gender, 
 					String status) {
 		
 		this.employeeID = employeeID;
@@ -38,12 +38,12 @@ public class Employees {
 		this.status = status;
 	}
 	
-	public void setEmployeeID(int employeeID) {
+	public void setEmployeeID(Long employeeID) {
 		this.employeeID = employeeID;
 		
 	}
 	
-	public int getEmployeeID() {
+	public Long getEmployeeID() {
 		return this.employeeID;
 				
 	}
@@ -82,11 +82,11 @@ public class Employees {
 		return this.email;
 	}
 	
-	public void setPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(Long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	
-	public String getPhoneNumber() {
+	public Long getPhoneNumber() {
 		return this.phoneNumber;
 	}
 	
