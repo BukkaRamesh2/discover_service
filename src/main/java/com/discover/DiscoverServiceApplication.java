@@ -12,11 +12,11 @@ public class DiscoverServiceApplication {
 		 
 		System.out.println("Hello Team ");
 		
-//		Employees x = new Employees(1, "Thor", "Son of Odin", "255 heaven dr asgard", 
-//				"odinson@gmail.com", "0000000000", "Male", "Active");
+//		Employees x = new Employees((long)1, "Thor", "Son of Odin", "255 heaven dr asgard", 
+//				"odinson@gmail.com", (long)0000000000, "Male", "Active");
 //		
 //		System.out.println(x.toString());
-//		x.setPhoneNumber("1987676769");
+//		x.setPhoneNumber((long)1987676769);
 //		System.out.println(x.getPhoneNumber());
 //		
 		m1();
