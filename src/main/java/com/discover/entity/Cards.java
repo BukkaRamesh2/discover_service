@@ -9,15 +9,18 @@ public class Cards {
 //	 *     expiryDate
 //	 *     cardLimit
 //	 *     status
-	private int    cardId;
+	
+	private long cardId;
+	private String cardNumber;
 	private String cardType;
 	private double cardLimit;
 	private String status;
 	private Date issueDate;
 	private Date expiryDate;
 	
-	public Cards(int cardId, String cardType, double cardLimit, String status, Date issueDate, Date expiryDate) {
-        this.cardId = cardId;
+	public Cards(long cardId,String cardNumber, String cardType, double cardLimit, String status, Date issueDate, Date expiryDate) {
+        this.cardId= cardId;
+        this.cardNumber = cardNumber;
         this.cardType = cardType;
         this.cardLimit = cardLimit;
         this.status = status;
@@ -29,9 +32,11 @@ public class Cards {
 	
 	
 	
-	
-	public int getCardId() {
+	public long getCardId() {
 		return cardId;
+	}
+	public String getCardNumber() {
+		return cardNumber;
 	}
 	
 	public String getCardType() {
@@ -90,19 +95,20 @@ public class Cards {
 
 
 //testingg the methods 
-//public static void main(String[] args) {
-//    Cards card = new Cards(101, "Credit", 25000.00,"Active",new Date(),new Date(System.currentTimeMillis() + 31536000000L));
-//
-//    
-//   
-//    // Print values
-//    System.out.println("Card ID: " + card.getCardId());
-//    System.out.println("Card Type: " + card.getCardType());
-//    System.out.println("Card Limit: " + card.getCardLimit());
-//    System.out.println("Status: " + card.getStatus());
-//    System.out.println("Issue Date: " + card.getIssueDate());
-//    System.out.println("Expiry Date: " + card.getExpiryDate());
-//}
+public static void main(String[] args) {
+    Cards card = new Cards(45932872 ,"2081 8912 8982 3339", "Credit", 25000.00,"Active",new Date(),new Date(System.currentTimeMillis() + 31536000000L));
+
+    
+   
+    // Print values
+    System.out.println("Card Id: " + card.getCardId());
+    System.out.println("Card Number: " + card.getCardNumber());
+    System.out.println("Card Type: " + card.getCardType());
+    System.out.println("Card Limit: " + card.getCardLimit());
+    System.out.println("Status: " + card.getStatus());
+    System.out.println("Issue Date: " + card.getIssueDate());
+    System.out.println("Expiry Date: " + card.getExpiryDate());
+}
 }
 
 
