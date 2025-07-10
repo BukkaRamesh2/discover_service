@@ -10,6 +10,7 @@ public class Account {
     private Double balance;
     private LocalDate createdDate;
     private String status;
+    
     		
 }
 
