@@ -12,3 +12,4 @@ public class Transaction {
 	      char branchCode;
 
 }
+//Attribtes
