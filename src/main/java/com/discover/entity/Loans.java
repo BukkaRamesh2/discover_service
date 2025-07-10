@@ -11,6 +11,7 @@ public class Loans {
     //  apr
     //  loanDate
     //  status
+	// loan class
 
     private int loanId;
     private String loanType;
