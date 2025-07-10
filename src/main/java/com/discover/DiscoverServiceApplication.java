@@ -1,5 +1,4 @@
 package com.discover;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,6 +8,7 @@ public class DiscoverServiceApplication {
 	public static void main(String[] args) {
 		 
 		System.out.println("Hello Team ");
+
 		m1();
 		SpringApplication.run(DiscoverServiceApplication.class, args);
 	}
