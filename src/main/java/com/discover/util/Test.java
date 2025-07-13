@@ -38,5 +38,4 @@ public class Test extends Customer{
 	
 	public void test(){
 	}
-
 }
