@@ -45,9 +45,7 @@ public class OOPS extends Transaction implements Transaction.Transdetails
 		
 	t3.condition();
 	t3.amountcondition();
-	
-		
-     }
+ }
 }
 
 

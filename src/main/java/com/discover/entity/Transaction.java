@@ -174,7 +174,7 @@ public class Transaction
 	System.out.println("Amount: " + t3.getAmount());
 	System.out.println("Date: " + t3.getDate());
    t3.condition();
-  }
+   }
 }
 	
 	
