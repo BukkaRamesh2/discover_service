@@ -1,4 +1,6 @@
 package com.discover.entity;
+import java.time.LocalDate;
+import java.time.DayOfWeek;
 
 public class Branch {
 	private int branchId;
@@ -7,8 +9,9 @@ public class Branch {
 	private String branchCode;
 	private int timings;
 	private String status;
+	private String contact;
 	
-	public Branch(int branchId, String branchName, String branchManager, String branchCode, int timings,String status)
+	public Branch(int branchId, String branchName, String branchManager, String branchCode, int timings,String status,String contact)
 	{
 		super();
 		this.branchId = branchId;
@@ -17,8 +20,8 @@ public class Branch {
 		this.branchCode = branchCode;
 		this.timings = timings;
 		this.status = status;
+		this.contact = contact;
 	}
-	
 	
 	
 	public int getBranchId() {
@@ -57,6 +60,24 @@ public class Branch {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
 	
+
+
+
+	@Override
+	public String toString() {
+		return "Branch [branchId=" + branchId + ", branchName=" + branchName + ", branchManager=" + branchManager
+				+ ", branchCode=" + branchCode + ", timings=" + timings + ", status=" + status + "]";
+	}
+
+
+
 	
 }
