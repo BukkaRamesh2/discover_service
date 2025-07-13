@@ -11,6 +11,8 @@ public class Employees {
 			gender;
 			status;
 	*/
+	
+//	Encapsulation - hiding data by making it private
 	private Long employeeID;
 	private String firstName;
 	private String lastName;
@@ -20,6 +22,8 @@ public class Employees {
 	private String gender;
 	private String status;
 	
+	
+// method overloading
 	public Employees() {
 		
 	}
@@ -107,6 +111,8 @@ public class Employees {
 		return this.status;
 	}
 	
+	
+//	method overriding - overrides toString method from the object class
 	@Override
 	public String toString() {
 		return "Employees{" +
