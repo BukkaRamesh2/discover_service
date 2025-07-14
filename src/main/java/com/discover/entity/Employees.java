@@ -1,6 +1,6 @@
 package com.discover.entity;
 
-public class Employees {
+public class Employees implements Comparable<Employees>{
 	/*Employees -- harsha
 	      employeeId;
 			firstName;
@@ -126,5 +126,11 @@ public class Employees {
 	            ", Status = '" + status + '\'' +
 	            '}';
 	}
+	
+	@Override
+	public int compareTo(Employees other){
+		return this.employeeID.compareTo(other.employeeID);
+	}
+	
 
 }
