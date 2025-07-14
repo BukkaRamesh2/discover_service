@@ -14,7 +14,7 @@ public class Cards {
 	private String status;
 	private Date issueDate;
 	private Date expiryDate;
-	
+		
 	
 	public Cards() {}
 	

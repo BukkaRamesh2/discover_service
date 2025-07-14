@@ -4,7 +4,8 @@ import java.util.Date;
 
 import com.discover.entity.Cards;
 
-public class CreditCard extends Cards implements CardOperations {
+
+	public class CreditCard extends Cards implements CardOperations {
 	
 	public CreditCard(long cardId, String cardNumber, double CardLimit, Date issueDate, Date expiryDate) {
 		super(cardId, cardNumber, "Credit",CardLimit, "Inactive",issueDate, expiryDate);
@@ -38,9 +39,19 @@ public class CreditCard extends Cards implements CardOperations {
         System.out.println("Card Type: " + card.getCardType());
         System.out.println("Card Status: " + card.getStatus()); 
 	    }
+	
+	
+//	displaycardInfo(mycard);  ---> number, type, status
+//	
+//	displaycardInfo(mycard, true) ---> number, type, status, cardlimit
+	
 
-	public void displayCardInfo(Cards card, boolean showLimit) {
-		displayCardInfo(card);
+	public void displayCardInfo(Cards card, boolean showLimit) {  // showlimit true or false
+		//displayCardInfo(card);
+		
+		System.out.println("Card Number: " + card.getCardNumber());
+        System.out.println("Card Type: " + card.getCardType());
+        System.out.println("Card Status: " + card.getStatus()); 
 	    if (showLimit) {
 	    	System.out.println("Card Limit: " + card.getCardLimit());
 	     }
