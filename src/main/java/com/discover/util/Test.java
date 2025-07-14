@@ -54,7 +54,7 @@ public class Test {
         for (SavingsAccount acc : accounts) {
             acc.displayDetails();
             acc.validateBalance();
-
+            
             if (acc.status.equals("Active")) {
                 System.out.println("This account is currently active.\n");
             } else {
