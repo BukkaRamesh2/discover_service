@@ -1,6 +1,6 @@
 package com.discover.util;
 
-public class Test {
+public class AccTest {
 
     // Account class
     static class Account {
@@ -12,15 +12,15 @@ public class Test {
 
         void displayDetails() {
             System.out.println("Account ID: " + accountId);
-            System.out.println("Number: " + accountNumber);
-            System.out.println("Type: " + accountType);
+            System.out.println("Account Number: " + accountNumber);
+            System.out.println("Account Type: " + accountType);
             System.out.println("Balance: $" + balance);
             System.out.println("Status: " + status);
             
         }
     }
 
-    // Inheritance and method overriding
+    // SavingsAccount inherits from Account
     static class SavingsAccount extends Account {
         void validateBalance() {
             if (balance < 1000) {
@@ -32,7 +32,6 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        // Create two accounts
         SavingsAccount acc1 = new SavingsAccount();
         acc1.accountId = 1;
         acc1.accountNumber = "ACC101";
@@ -47,15 +46,13 @@ public class Test {
         acc2.balance = 1500.0;
         acc2.status = "Inactive";
 
-        // Array of accounts
         SavingsAccount[] accounts = { acc1, acc2 };
 
-        // Loop to display  details and check status
         for (SavingsAccount acc : accounts) {
             acc.displayDetails();
             acc.validateBalance();
-            
-            if (acc.status.equals("Active")) {
+
+            if ("Active".equals(acc.status)) {
                 System.out.println("This account is currently active.\n");
             } else {
                 System.out.println("This account is currently inactive.\n");
