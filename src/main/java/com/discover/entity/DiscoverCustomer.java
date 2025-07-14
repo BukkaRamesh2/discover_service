@@ -1,7 +1,7 @@
 package com.discover.entity;
 
 
-abstract class DiscoverCustomer {
+public class DiscoverCustomer {
 	
 
 	protected boolean gender;
@@ -11,7 +11,9 @@ abstract class DiscoverCustomer {
 		this.gender = gender;
 	}
 	
-	public abstract void displayDetails();
+	public void displayDetails() {
+		
+	}
 	
 	
 	
