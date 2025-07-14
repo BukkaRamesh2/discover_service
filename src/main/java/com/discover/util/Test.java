@@ -50,7 +50,7 @@ public class Test {
         // Array of accounts
         SavingsAccount[] accounts = { acc1, acc2 };
 
-        // Loop to display details and check status
+        // Loop to display  details and check status
         for (SavingsAccount acc : accounts) {
             acc.displayDetails();
             acc.validateBalance();
