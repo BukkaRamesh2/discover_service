@@ -1,6 +1,6 @@
 package com.discover.entity;
 
-public class Customer  extends DiscoverCustomer{
+public class Customer {
 
 
 	public Long customerID;
@@ -17,20 +17,27 @@ public class Customer  extends DiscoverCustomer{
 	Integer age =  18;   // global variable
 	
 	
-	
-	
-	
-	
-	
-	
-	public Customer(boolean gender) {
-		super(gender);
+
+
+
+	public Customer(Long customerID2, String firstName2, String lastName2, String address2, String email2,
+			Long phoneNumber2, boolean gender, boolean status2, String name2, Integer age2) {
 		// TODO Auto-generated constructor stub
 	}
 
-  	
-  	
-	
+
+
+
+
+
+
+	public Customer() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
 
 
 
@@ -109,23 +116,14 @@ public class Customer  extends DiscoverCustomer{
 
 
 
-	@Override
 	public void displayDetails() {
 		// TODO Auto-generated method stub
-		
-		
 		System.out.println("customer Id: "+customerID + "Name : " + firstName);
-		
 	}
 	
 	public static void applyBonus() {
 		if(firstName != null && firstName == "alex" && phoneNumber == 123454545L) {
-			
-			
-				
 				System.out.println("Alex you got a bonus");
-			
-			
 		} else if(firstName == "Bob"){
 			System.out.println("Bob got bonus");
 		} else {
@@ -144,8 +142,6 @@ public class Customer  extends DiscoverCustomer{
             break;  
          default: 
  			System.out.println("You are not correct member");
-
-		
 		}
 	}
 	
