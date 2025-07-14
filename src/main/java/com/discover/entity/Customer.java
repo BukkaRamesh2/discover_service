@@ -343,7 +343,7 @@ public class Customer {
 	 *     issueDate
 	 *     status
 	 *     
-	 *   Cards -- sathya
+	 *   Cards -- satya
 	 *     cardId
 	 *     cardType
 	 *     issueDate
