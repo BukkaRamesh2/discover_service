@@ -92,3 +92,7 @@ public class AddressTest
            
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> d52ad0c (demonstration of collections arraylist, hashmap and treeset)
