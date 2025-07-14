@@ -17,7 +17,7 @@ public class Support {
         this.createDate = date;
         this.status = status;
     }
-    
+
     public int getSupportId() {
         return supportId;
     }
@@ -58,5 +58,6 @@ public class Support {
 		this.status = status;
 	}
 
- 
+
 }
+
