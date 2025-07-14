@@ -1,61 +1,123 @@
 package com.discover.util;
 
+import java.util.Date;
+
 public class AccTest {
 
-    // Account class
+    // Encapsulation: Account class with private fields and public getters/setters
     static class Account {
-        int accountId;
-        String accountNumber;
-        String accountType;
-        double balance;
-        String status;
+        private int accountId;
+        private String accountNumber;
+        private String accountType;
+        private double balance;
+        private Date createdDate;
+        private String status;
 
-        void displayDetails() {
+        // Getters and Setters
+        public int getAccountId() { return accountId; }
+        public void setAccountId(int accountId) { this.accountId = accountId; }
+
+        public String getAccountNumber() { return accountNumber; }
+        public void setAccountNumber(String accountNumber) { this.accountNumber = accountNumber; }
+
+        public String getAccountType() { return accountType; }
+        public void setAccountType(String accountType) { this.accountType = accountType; }
+
+        public double getBalance() { return balance; }
+        public void setBalance(double balance) { this.balance = balance; }
+
+        public Date getCreatedDate() { return createdDate; }
+        public void setCreatedDate(Date createdDate) { this.createdDate = createdDate; }
+
+        public String getStatus() { return status; }
+        public void setStatus(String status) { this.status = status; }
+
+        public void displayDetails() {
             System.out.println("Account ID: " + accountId);
             System.out.println("Account Number: " + accountNumber);
-            System.out.println("Account Type: " + accountType);
+            System.out.println("Type: " + accountType);
             System.out.println("Balance: $" + balance);
             System.out.println("Status: " + status);
+            System.out.println("Created: " + createdDate);
             
         }
     }
 
-    // SavingsAccount inherits from Account
-    static class SavingsAccount extends Account {
-        void validateBalance() {
-            if (balance < 1000) {
-                System.out.println(accountNumber + " - Balance is below minimum");
+    // Abstraction: Abstract class with abstract method
+    abstract static class AccountValidator {
+        public abstract void validate(Account acc);
+    }
+
+    // Inheritance: Child classes override validate()
+    static class SavingsAccountValidator extends AccountValidator {
+        public void validate(Account acc) {
+            if (acc.getBalance() < 1000) {
+                System.out.println("Low balance for savings account: " + acc.getAccountNumber());
             } else {
-                System.out.println(accountNumber + " - Balance is sufficient");
+                System.out.println("Savings account valid: " + acc.getAccountNumber());
+            }
+        }
+    }
+
+    static class CurrentAccountValidator extends AccountValidator {
+        public void validate(Account acc) {
+            if (!"Active".equals(acc.getStatus())) {
+                System.out.println("Inactive current account: " + acc.getAccountNumber());
+            } else {
+                System.out.println("Current account valid: " + acc.getAccountNumber());
             }
         }
     }
 
     public static void main(String[] args) {
-        SavingsAccount acc1 = new SavingsAccount();
-        acc1.accountId = 1;
-        acc1.accountNumber = "ACC101";
-        acc1.accountType = "Savings";
-        acc1.balance = 800.0;
-        acc1.status = "Active";
+        Account[] accounts = new Account[4];
+        int i = 0;
 
-        SavingsAccount acc2 = new SavingsAccount();
-        acc2.accountId = 2;
-        acc2.accountNumber = "ACC102";
-        acc2.accountType = "Savings";
-        acc2.balance = 1500.0;
-        acc2.status = "Inactive";
+        // do-while loop: create 3 accounts
+        do {
+            accounts[i] = new Account();
+            accounts[i].setAccountId(i + 1);
+            accounts[i].setAccountNumber("ACC00" + (i + 1));
+            accounts[i].setAccountType((i % 2 == 0) ? "Savings" : "Current");
+            accounts[i].setBalance(500 + (i * 800));
+            accounts[i].setStatus((i % 2 == 0) ? "Active" : "Inactive");
+            accounts[i].setCreatedDate(new Date());
+            i++;
+        } while (i < 3);
 
-        SavingsAccount[] accounts = { acc1, acc2 };
+        // while loop: validate accounts using polymorphism
+        int j = 0;
+        while (j < 3) {
+            Account acc = accounts[j];
+            AccountValidator validator;
 
-        for (SavingsAccount acc : accounts) {
-            acc.displayDetails();
-            acc.validateBalance();
-
-            if ("Active".equals(acc.status)) {
-                System.out.println("This account is currently active.\n");
+            // Polymorphism + if-else
+            if ("Savings".equals(acc.getAccountType())) {
+                validator = new SavingsAccountValidator();
             } else {
-                System.out.println("This account is currently inactive.\n");
+                validator = new CurrentAccountValidator();
+            }
+
+            validator.validate(acc);
+            j++;
+        }
+
+        // for loop + switch-case
+        for (int k = 0; k < 4; k++) {
+            if (accounts[k] != null) {
+                accounts[k].displayDetails();
+                switch (accounts[k].getStatus()) {
+                    case "Active":
+                        System.out.println("Status check: Active");
+                        break;
+                    case "Inactive":
+                        System.out.println("Status check: Inactive");
+                        break;
+                    default:
+                        System.out.println("Status unknown");
+                }
+            } else {
+                System.out.println("Account at index " + k + " is null.");
             }
         }
     }
