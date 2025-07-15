@@ -80,12 +80,15 @@
     <version>42.7.7</version>
 </dependency>
 
+<<<<<<< HEAD
 <dependency>
   <groupId>org.springdoc</groupId>
   <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
   <version>2.5.0</version> <!-- compatible with Spring Boot 3.x -->
 </dependency>
 
+=======
+>>>>>>> 2c771ee (added curd template)
 	</dependencies>
 
 	<build>

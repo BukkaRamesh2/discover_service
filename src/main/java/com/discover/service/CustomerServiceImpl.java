@@ -1,79 +1,43 @@
 package com.discover.service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.locks.ReentrantLock;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 
 import com.discover.entity.Customer;
-import com.discover.exception.CustomerNotFoundException;
 import com.discover.repository.CustomerRepository;
-import com.discover.util.DeadlockDemo;
-
-import jakarta.transaction.Transactional;
 
 @Service
 public class CustomerServiceImpl implements CustomerService{
 	
-	
-	private final Map<Long, Customer> customerStore =  new HashMap();
-	
-	
 	@Autowired
-	CustomerRepository customerRepository;
+	CustomerRepository custRepo;
 
-	
-	@Transactional
-    @Override
-    public Customer addCustomer(Customer customer) {
-        if (customer.getCustomerID() != null || customer.getVersion() != null) {
-            throw new IllegalArgumentException("No ID/version allowed when creating");
-        }
-        return customerRepository.save(customer);
-    }
+	@Override
+	public Customer addCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		// anthing 
+		return custRepo.save(customer);
+	}
 
-    @Transactional
-    @Override
-    public Customer updateCustomer(Customer customer) {
-        if (customer.getCustomerID() == null || customer.getVersion() == null) {
-            throw new IllegalArgumentException("ID and version required for update");
-        }
+	@Override
+	public Customer getCustomer(Long Id) {
+		// TODO Auto-generated method stub
+		return custRepo.getById(Id);
+	}
 
-        Customer existing = customerRepository.findById(customer.getCustomerID())
-            .orElseThrow(() -> new CustomerNotFoundException("Customer Id " + customer.getCustomerID() + " not found"));
+	@Override
+	public List<Customer> getAllCustomers() {
+		// TODO Auto-generated method stub
+		return custRepo.findAll();
+	}
 
-        if (!existing.getVersion().equals(customer.getVersion())) {
-            throw new ObjectOptimisticLockingFailureException(Customer.class, customer.getCustomerID());
-        }
-
-        BeanUtils.copyProperties(customer, existing, "id", "version");
-        return customerRepository.save(existing);
-    }
-	
-	
-    @Override
-    public Customer getCustomerById(Long id) {
-            return customerRepository.findById(id)
-                .orElseThrow(() -> new CustomerNotFoundException("Customer Id " + id + " not found"));
-    }
-
-    @Override
-    public List<Customer> getAllCustomers() {
-        return customerRepository.findAll();
-    }
-
-    @Override
-    public void deleteCustomer(Long id) {
-        if (!customerRepository.existsById(id)) {
-            throw new CustomerNotFoundException("Customer Id " + id + " not found");
-        }
-        customerRepository.deleteById(id);
-    }
+	@Override
+	public Customer updateCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		return custRepo.save(customer);
+	}
 
 	
 

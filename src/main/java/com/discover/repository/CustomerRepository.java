@@ -8,7 +8,4 @@ import com.discover.entity.Customer;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long>{
 
-	
-//	public Customer findByFirstName(String firstName);
-	
 }
