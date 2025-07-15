@@ -1,6 +1,11 @@
 package com.discover.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Documents {
+	@Id
 	private int documentid ;
 	private String documenttype ;
 	private int issuedate ;
