@@ -2,7 +2,7 @@ package com.discover.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.discover.entity.Employees;
+import com.discover.entity.Employee;
 
 
 //Inheritance
@@ -30,8 +30,8 @@ public class TestEmployee{
 		humanCheck y = new employeeCheck();
 		x.check();
 		y.check();
-		Employees[] emp = new Employees[4];
-		List<Employees> empList = new ArrayList<>();
+		Employee[] emp = new Employee[4];
+		List<Employee> empList = new ArrayList<>();
 		
 		
 		
@@ -39,7 +39,7 @@ public class TestEmployee{
 		
 //		do while
 		do {
-			emp[i] = new Employees();
+			emp[i] = new Employee();
 			i++;
 		}
 		while (i<3);
