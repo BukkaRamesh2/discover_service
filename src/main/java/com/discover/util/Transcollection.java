@@ -19,11 +19,10 @@ public static void main(String[] args) {
             System.out.println(t.getTransactionId());
         }
 
-        
         LinkedList<Transaction> linkedList = new LinkedList<>();
         linkedList.addAll(arrayList);
 
-        System.out.println("\nLinkedList:");
+        System.out.println("LinkedList:");
         for (Transaction t : linkedList) {
             System.out.println(t.getTransactionId());
       }
@@ -35,7 +34,7 @@ public static void main(String[] args) {
         Transhash.add(t3);
       
 
-        System.out.println("\nHashSet:");
+        System.out.println("nHashSet:");
         for (Transaction t : Transhash) {
             System.out.println(t.getTransactionId());
         }
@@ -44,7 +43,7 @@ public static void main(String[] args) {
         transtree.add(t2.getTransactionId());
         transtree.add(t3.getTransactionId());
   
-          System.out.println("\nTreeSet");
+          System.out.println("TreeSet");
         for (int id : transtree) {
             System.out.println(id);
    }
