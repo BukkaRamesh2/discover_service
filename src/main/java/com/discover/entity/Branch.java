@@ -1,8 +1,16 @@
 package com.discover.entity;
 import java.time.LocalDate;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.time.DayOfWeek;
 
+
+@Entity
 public class Branch {
+	
+	@Id
 	private int branchId;
 	private String branchName;
 	private String branchManager;
