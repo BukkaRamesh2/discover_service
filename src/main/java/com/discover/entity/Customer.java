@@ -332,6 +332,13 @@ public class Customer {
 	 *           }
 	 *           
 	 *           
+	 *           
+	 *           
+	 *           
+	 *           
+	 *           
+	 *           
+	 *           
 	 *      Spring MVC architecture   -- Backend , Frontend withn database 
 	 *      You will get a form Data 
 	 *      
@@ -369,7 +376,7 @@ public class Customer {
 	 *       @GetMapping -- get customer
 	 *       @PostMapping -- create
 	 *       @PutMapping -- update the record
-	 *       @DeleteMapping -- to  delelet the record
+	 *       @DeleteMapping -- to  delete the record
 	 *       
 	 *       @RequestBody -- ready entire data object from postman or swagger 
 	 *       @ResponseBody  --- return data
