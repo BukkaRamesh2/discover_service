@@ -9,5 +9,5 @@ public interface BranchService {
 	public Branch addBranch(Branch brh);
 	public Branch getBranch(Long Id);
 	public List<Branch> getAllBranches();
-	public Branch updateCustomer(Branch brh);
+	public Branch updateBranch(Branch brh);
 }
