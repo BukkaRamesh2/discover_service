@@ -1,7 +1,11 @@
 package com.discover.entity;
 
-public class Employees implements Comparable<Employees>{
-	/*Employees -- harsha
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Employee implements Comparable<Employee>{
+	/*Employee -- harsha
 	      employeeId;
 			firstName;
 			lastName;
@@ -13,6 +17,7 @@ public class Employees implements Comparable<Employees>{
 	*/
 	
 //	Encapsulation - hiding data by making it private
+	@Id
 	private Long employeeID;
 	private String firstName;
 	private String lastName;
@@ -24,11 +29,11 @@ public class Employees implements Comparable<Employees>{
 	
 	
 // method overloading
-	public Employees() {
+	public Employee() {
 		
 	}
 	
-	public Employees(Long employeeID, String firstName, String lastName, 
+	public Employee(Long employeeID, String firstName, String lastName, 
 					String address, String email, Long phoneNumber, String gender, 
 					String status) {
 		
@@ -115,7 +120,7 @@ public class Employees implements Comparable<Employees>{
 //	method overriding - overrides toString method from the object class
 	@Override
 	public String toString() {
-		return "Employees{" +
+		return "Employee{" +
 				"Employee ID=" + employeeID +
 	            ", First Name = '" + firstName + '\'' +
 	            ", Last Name = '" + lastName + '\'' +
@@ -128,7 +133,7 @@ public class Employees implements Comparable<Employees>{
 	}
 	
 	@Override
-	public int compareTo(Employees other){
+	public int compareTo(Employee other){
 		return this.employeeID.compareTo(other.employeeID);
 	}
 	
