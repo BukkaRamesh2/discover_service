@@ -1,12 +1,15 @@
 package com.discover.entity;
 import java.util.Date;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity
 public class Cards {
 
 //IMPLENTING JAVA BASICS AND OOPS FEATURES
 	
-
+	@Id
 	private long cardId;
 	private String cardNumber;
 	private String cardType;
