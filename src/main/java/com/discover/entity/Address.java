@@ -1,5 +1,9 @@
 package com.discover.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Address 
 {
 	/* addressId
@@ -10,6 +14,7 @@ public class Address
 	 *      status
 	*/
 	//instance variables of Address class
+	@Id
 	private int addressId;
 	private String lane;
 	private String city;
