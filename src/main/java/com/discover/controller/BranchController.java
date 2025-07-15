@@ -27,7 +27,7 @@ public class BranchController {
 		return brhService.addBranch(brh);
 	}
 	
-	@GetMapping("/getBranch/{branchId}")
+	@GetMapping("/getBranch/{branchID}")
 	public Branch getBranch(@PathParam("branchID") Long branchID)
 	{
 		return brhService.getBranch(branchID);
