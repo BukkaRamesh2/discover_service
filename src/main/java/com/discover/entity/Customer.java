@@ -1,156 +1,227 @@
 package com.discover.entity;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Version;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class Customer {
-	
-	
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long customerID;
-	private String firstName;
+
+    
+	@Id
+	public Long customerID;
+	private static String firstName = "Carol";
 	private String lastName;
-	private String address;
+	protected String address;
 	private String email;
-	private Long phoneNumber;
-	private boolean status;
-	  
-	@Version
-	private Integer version; // Used for optimistic locking
+	private static Long phoneNumber;
+	boolean status;
 	
-	public Long getCustomerID() {
-		return customerID;
+	
+	String name = "123";
+	
+	Integer age =  18;   // global variable
+	
+	
+
+
+
+	public Customer(Long customerID2, String firstName2, String lastName2, String address2, String email2,
+			Long phoneNumber2, boolean gender, boolean status2, String name2, Integer age2) {
+		// TODO Auto-generated constructor stub
 	}
-	public void setCustomerID(Long customerID) {
-		this.customerID = customerID;
+
+
+
+
+
+
+
+	public Customer() {
+		// TODO Auto-generated constructor stub
 	}
+
+
+
+
+
+
+
+	public Long getCustomerID () {
+		Integer number =  18;   // local variable
+		return this.customerID;
+	}
+	
+	public void setCustomerID(Long customerId) {
+		age = 21;
+		this.customerID = customerId;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
 	public String getLastName() {
 		return lastName;
 	}
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
 	public String getAddress() {
 		return address;
 	}
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public Long getPhoneNumber() {
 		return phoneNumber;
 	}
+
 	public void setPhoneNumber(Long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
+
+
 	public boolean isStatus() {
 		return status;
 	}
+
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
-	
-	
-	public Integer getVersion() {
-		return version;
+
+	public String getName() {
+		return name;
 	}
-	public void setVersion(Integer version) {
-		this.version = version;
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(address, age, customerID, email, lastName, name, status);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		return Objects.equals(address, other.address) && Objects.equals(age, other.age)
+				&& Objects.equals(customerID, other.customerID) && Objects.equals(email, other.email)
+				&& Objects.equals(lastName, other.lastName) && Objects.equals(name, other.name)
+				&& status == other.status;
+	}
+
+
+
+
+
+
+
+	public void testMethod() {
+		System.out.println("inside customer class");
+	}
+
+
+
+	public void displayDetails() {
+		// TODO Auto-generated method stub
+		System.out.println("customer Id: "+customerID + "Name : " + firstName);
+	}
+	
+	public static void applyBonus() throws Exception{
+	    
+		// create constructorr and add a data 
+		
+		
+		Long currentime = System.currentTimeMillis(); // cureeent time 
+		
+		List<Customer> custList = new ArrayList<Customer>();
+	      custList.add(null);  /// pass const 
+	      
+	      for (Customer customer : custList) {
+			  if(customer.getFirstName().contains("Hari")) {
+				  
+			  }
+		}
+	      
+	      Long endtime = System.currentTimeMillis(); // cureeent time 
+	      System.out.println("Actual time taken for array: "+ (endtime - currentime)); // time tak
+
+	      
+	      
+	      Long currentime1 = System.currentTimeMillis(); // cureeent time 
+			
+			List<Customer> custList2 = new LinkedList<Customer>();
+		      custList.add(null);
+		      
+		      for (Customer customer : custList) {
+				  if(customer.getFirstName().contains("Hari")) {
+					  
+				  }
+			}
+		      
+		      Long endtime2 = System.currentTimeMillis(); // cureeent time 
+		      System.out.println("Actual time taken for array: "+ (endtime2 - currentime1)); // time tak
+	      
+	
+	
+		if(firstName != null && firstName == "alex" && phoneNumber == 123454545L) {
+				System.out.println("Alex you got a bonus");
+		} else if(firstName == "Bob"){
+			System.out.println("Bob got bonus");
+		} else {
+			System.out.println("You are not correct member");
+		}
+		
+		switch (firstName) {
+		case "alex" :
+			System.out.println("Alex you got a bonus");
+            break;
+		case "bob" :
+			System.out.println("bob you got a bonus");
+            break;
+		case "Carol" :
+			System.out.println("Carol you got a bonus");
+            break;  
+         default: 
+ 			System.out.println("You are not correct member");
+		}
 	}
 	
 	
-	
-
-
-//	public static void applyBonus() throws Exception{
-//	    
-//		// create constructorr and add a data 
-//		
-//		
-//		Long currentime = System.currentTimeMillis(); // cureeent time 
-//		
-//		List<Customer> custList = new ArrayList<Customer>();
-//	      custList.add(null);  /// pass const 
-//	      
-//	      for (Customer customer : custList) {
-//			  if(customer.getFirstName().contains("Hari")) {
-//				  
-//			  }
-//		}
-//	      
-//	      Long endtime = System.currentTimeMillis(); // cureeent time 
-//	      System.out.println("Actual time taken for array: "+ (endtime - currentime)); // time tak
-//
-//	      
-//	      
-//	      Long currentime1 = System.currentTimeMillis(); // cureeent time 
-//			
-//			List<Customer> custList2 = new LinkedList<Customer>();
-//		      custList.add(null);
-//		      
-//		      for (Customer customer : custList) {
-//				  if(customer.getFirstName().contains("Hari")) {
-//					  
-//				  }
-//			}
-//		      
-//		      Long endtime2 = System.currentTimeMillis(); // cureeent time 
-//		      System.out.println("Actual time taken for array: "+ (endtime2 - currentime1)); // time tak
-//	      
-//	
-//	
-//		if(firstName != null && firstName == "alex" && phoneNumber == 123454545L) {
-//				System.out.println("Alex you got a bonus");
-//		} else if(firstName == "Bob"){
-//			System.out.println("Bob got bonus");
-//		} else {
-//			System.out.println("You are not correct member");
-//		}
-//		
-//		switch (firstName) {
-//		case "alex" :
-//			System.out.println("Alex you got a bonus");
-//            break;
-//		case "bob" :
-//			System.out.println("bob you got a bonus");
-//            break;
-//		case "Carol" :
-//			System.out.println("Carol you got a bonus");
-//            break;  
-//         default: 
-// 			System.out.println("You are not correct member");
-//		}
-//	}
-//	
-//	
-
+	public static void main(String[] args) {
+		//applyBonus();
+	}
 	
 	
 	
@@ -391,28 +462,6 @@ public class Customer {
 	 *       
 	 *       
 	 *       
-	 *      
-	 *      Datatypes
-	 *      variables
-	 *      wrapperclasses
-	 *      constructors
-	 *      OOPS 
-	 *      Exception handling
-	 *      MultiThreds
-	 *      Loops & Conditional statments
-	 *      Access specifiers
-	 *      Collections
-	 *      Operators
-	 *      
-	 *      
-	 *      
-	 *      Spring boot structure
-	 *      DB connection 
-	 *      Global exception 
-	 *      
-	 *      Library pom.xml
-	 *      add the properties 
-	 *      establish connection
 	 *      
 	 *      
 	 *      

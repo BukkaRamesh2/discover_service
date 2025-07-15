@@ -3,10 +3,16 @@ package com.discover.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+<<<<<<< HEAD
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+=======
+=======
+>>>>>>> 2c771ee (added curd template)
+>>>>>>> 015c494 (added curd template)
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,14 +24,22 @@ import org.springframework.web.bind.annotation.RestController;
 import com.discover.entity.Customer;
 import com.discover.service.CustomerService;
 
+<<<<<<< HEAD
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
+=======
+>>>>>>> 2c771ee (added curd template)
 import jakarta.websocket.server.PathParam;
 
 
 @RestController
+<<<<<<< HEAD
 @RequestMapping("/api/customers")
+=======
+@RequestMapping("/customer")
+<<<<<<< HEAD
+>>>>>>> 015c494 (added curd template)
 @Tag(name = "Customer API", description = "Operations related to customers")
 @SecurityRequirement(name = "bearerAuth") // This applies JWT auth to all endpoints in this controller
 public class CustomerController {
@@ -75,5 +89,42 @@ public class CustomerController {
         customerService.deleteCustomer(customerID);
         return ResponseEntity.noContent().build();
     }
+=======
+public class CustomerController {
+	
+	
+	
+	@Autowired
+	CustomerService custService;
+	
+	
+	@PostMapping("/addCustomer")
+	public Customer addCustomer(@RequestBody Customer customer){
+		return custService.addCustomer(customer);
+		
+	}
+	
+	@GetMapping("/getCustomer/{customerID}")
+	public Customer getCustomer(@PathParam("customerID") Long customerID){
+		return custService.getCustomer(customerID);
+	}
+	
+	@GetMapping("/getAllCustomers")
+	public List<Customer> getAllCustomers(){
+		return custService.getAllCustomers();
+	}
+	
+	@PutMapping("/updateCustomer")
+	public Customer updateCustomer(@RequestBody Customer customer){
+		return custService.updateCustomer(customer);
+	}
+	
+	@DeleteMapping("/deleteCustomer/{customerID}")
+	public void deleteCustomer(@PathParam("customerID") Long customerID){
+		
+	}
+	
+	
+>>>>>>> 2c771ee (added curd template)
 
 }
