@@ -39,8 +39,7 @@ public static void main(String[] args) {
         for (Transaction t : Transhash) {
             System.out.println(t.getTransactionId());
         }
-
-        Set<Integer> transtree = new TreeSet<>();
+      Set<Integer> transtree = new TreeSet<>();
         transtree.add(t1.getTransactionId());
         transtree.add(t2.getTransactionId());
         transtree.add(t3.getTransactionId());
