@@ -33,7 +33,7 @@ public class BranchServiceImpl implements BranchService{
 	}
 	
 	@Override
-	public Branch updateCustomer(Branch brh)
+	public Branch updateBranch(Branch brh)
 	{
 		return brhRepo.save(brh);
 	}

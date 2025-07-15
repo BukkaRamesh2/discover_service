@@ -42,7 +42,7 @@ public class BranchController {
 	@PutMapping("/updateBranch")
 	public Branch updateBranch(@RequestBody Branch brh)
 	{
-		return brhService.updateCustomer(brh);
+		return brhService.updateBranch(brh);
 	}
 	
 	@DeleteMapping("/deleteBranch/{branchID}")
