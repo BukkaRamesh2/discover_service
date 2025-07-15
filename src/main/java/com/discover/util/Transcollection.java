@@ -26,7 +26,7 @@ public static void main(String[] args) {
         System.out.println("\nLinkedList:");
         for (Transaction t : linkedList) {
             System.out.println(t.getTransactionId());
-        }
+      }
 
  
         Set<Transaction> Transhash = new HashSet<>();
@@ -48,6 +48,6 @@ public static void main(String[] args) {
           System.out.println("\nTreeSet");
         for (int id : transtree) {
             System.out.println(id);
-        }
+   }
     }
 }
