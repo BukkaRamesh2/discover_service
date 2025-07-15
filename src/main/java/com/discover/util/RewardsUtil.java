@@ -1,7 +1,10 @@
 package com.discover.util;
 
+
 import com.discover.entity.Rewards;
 import java.time.LocalDate;
+import java.util.*;                 // For List, Set, Map, Queue
+
 
 //Abstraction
 abstract class RewardsBase {
@@ -92,5 +95,75 @@ public class RewardsUtil extends RewardsBase {
         util.printRewardDetails(reward);
         util.printRewardDetails("Holiday Bonus", 1200);
         util.evaluateReward(reward);
+        
+        Rewards r1 = new Rewards(1L, "Welcome Bonus", 1200, LocalDate.now(), "active");
+        Rewards r2 = new Rewards(2L, "Holiday Gift", 700, LocalDate.now(), "expired");
+        Rewards r3 = new Rewards(3L, "Referral Reward", 500, LocalDate.now(), "pending");
+        Rewards r4 = new Rewards(4L, "Loyalty Points", 200, LocalDate.now(), "active");
+
+        RewardsUtil util1 = new RewardsUtil();
+        
+     //List - Ordered, allows duplicates
+        //ArrayList
+        List<Rewards> rewardList = new ArrayList<>();
+        rewardList.add(r1);
+        rewardList.add(r2);
+        rewardList.add(r2); // Duplicate allowed
+
+        System.out.println("\n List Example:");
+        for(Rewards r : rewardList) {
+            util.printRewardDetails(r);
+            util.evaluateReward(r);
+            System.out.println("-----------------------------");
+        }
+        
+        //LinkedList - similar to ArrayList but with different internal structure (nodes)
+        List<Rewards> rewardLinkedList = new LinkedList<>();
+        rewardLinkedList.add(r1);
+        rewardLinkedList.add(r2);
+
+        System.out.println("\n LinkedList Example: ");
+        for (Rewards r : rewardLinkedList) {
+            util.printRewardDetails(r);
+            util.evaluateReward(r);
+            System.out.println("-----------------------------");
+        }
+
+      //set
+        //HashSet
+        Set<Rewards> rewardSet = new HashSet<>(rewardList);
+
+        System.out.println("\n Set Example (no duplicates):");
+        for (Rewards r : rewardSet) {
+            util.printRewardDetails(r);
+            System.out.println("-----------------------------");
+        }
+        
+        //TreeSet (sorted by points using Comparator)
+        Set<Rewards> sortedRewards = new TreeSet<>(Comparator.comparingInt(Rewards::getRewardsPoints));
+        sortedRewards.add(r1);
+        sortedRewards.add(r2);
+        
+        System.out.println("\n TreeSet Example (Sorted by Points):");
+        for (Rewards r : sortedRewards) {
+            System.out.println("Points: " + r.getRewardsPoints() + " - " + r.getRewardsName());
+            System.out.println("-----------------------------");
+        }
+        
+        
+        //Map - Key-value pairs
+        Map<Long, Rewards> rewardMap = new HashMap<>();
+        rewardMap.put(r1.getRewardsId(), r1);
+        rewardMap.put(r2.getRewardsId(), r2);
+      
+        System.out.println("\n Map Example (ID -> Reward):");
+        for (Map.Entry<Long, Rewards> entry : rewardMap.entrySet()) {
+            System.out.println("Key (ID): " + entry.getKey());
+            util.printRewardDetails(entry.getValue());
+            System.out.println("-----------------------------");
+            }
+        
+     
     }
 }
+
