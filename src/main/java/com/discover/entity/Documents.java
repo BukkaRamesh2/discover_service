@@ -10,6 +10,19 @@ public class Documents {
 	public int getDocumentid() {
 		return documentid;
 	}
+	public Documents(int documentid, String documenttype, int issuedate, String status, int expirydate) {
+		super();
+		this.documentid = documentid;
+		this.documenttype = documenttype;
+		this.issuedate = issuedate;
+		this.status = status;
+		this.expirydate = expirydate;
+	}
+	@Override
+	public String toString() {
+		return "Documents [documentid=" + documentid + ", documenttype=" + documenttype + ", issuedate=" + issuedate
+				+ ", status=" + status + ", expirydate=" + expirydate + "]";
+	}
 	public void setDocumentid(int documentid) {
 		this.documentid = documentid;
 	}
