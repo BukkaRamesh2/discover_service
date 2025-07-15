@@ -2,18 +2,14 @@ package com.discover.entity;
 
 import java.util.Date;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Loans {
 
-    //	loanId
-    //  loanType 
-    //  creditScore
-    //  loanAmount
-    //  apr
-    //  loanDate
-    //  status
-	// loan class
-
-    private int loanId;
+	@Id
+    private long loanId;
     private String loanType;
     private int creditScore;
     private double loanAmount;
@@ -31,7 +27,7 @@ public class Loans {
         this.loanDate = loanDate;
     }
 
-    public int getLoanId() {
+    public long getLoanId() {
         return loanId;
     }
 
