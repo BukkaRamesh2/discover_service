@@ -20,13 +20,13 @@ public class DocumentsController {
 	
 	
 	@PostMapping("/addDocuments")
-	public Documents addCustomer(@RequestBody Documents Documents){
+	public Documents addDocuments(@RequestBody Documents Documents){
 		return DctsService.addDocuments(Documents);
 		
 	}
 	
 	@GetMapping("/getDocuments/{DocumentsID}")
-	public Documents getCustomer(@PathParam("DocumentsID") Long DocumentsID){
+	public Documents getDocuments(@PathParam("DocumentsID") Long DocumentsID){
 		return DctsService.getDocuments(DocumentsID);
 	}
 	
@@ -36,12 +36,12 @@ public class DocumentsController {
 	}
 	
 	@PutMapping("/updateDocuments")
-	public Documents updateCustomer(@RequestBody Documents Documents){
+	public Documents updateDocuments(@RequestBody Documents Documents){
 		return DctsService.updateDocuments(Documents);
 	}
 	
 	@DeleteMapping("/deleteDocuments/{DocumentsID}")
-	public void DocumentsCustomer(@PathParam("DocumentsID") Long DocumentsID){
+	public void deleteDocuments(@PathParam("DocumentsID") Long DocumentsID){
 		
 	}
 	
