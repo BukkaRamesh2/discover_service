@@ -123,9 +123,5 @@ public class Test extends Customer{
 	
 	public void test(){
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> 6b0a652 (adding Test.java)
 }
 >>>>>>> 1faf4c9 (Add Test.java)
