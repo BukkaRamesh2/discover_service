@@ -38,4 +38,8 @@ public class Test extends Customer{
 	
 	public void test(){
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b0a652 (adding Test.java)
 }
