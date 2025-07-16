@@ -3,7 +3,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 public class Transaction 
 {
-	 public     int  transactionId;
+	 public     Long transactionId;
 	 public     String  transactionType;
 	 public     LocalDate date;
 	 public     LocalTime time;
@@ -25,11 +25,11 @@ public class Transaction
 	 {
 		 this.date = date;
 	 }
-	 public int getTransactionId()
+	 public Long getTransactionId()
 	 {
 		return transactionId;
 	}
-	 public void setTransactionId(int transactionId)
+	 public void setTransactionId(Long transactionId)
 	 {
 		 this.transactionId = transactionId;
 	 }
@@ -54,13 +54,13 @@ public class Transaction
 	 {    //method overiding
 		 System.out.println(" The transaction details:");
 	 }
-	 public void Trans(int  transactionId,String  transactionType) //method overloading -2 parameters
+	 public void Trans(Long  transactionId,String  transactionType) //method overloading -2 parameters
 	 {
 		 this.transactionId=transactionId;
 		 this.transactionType=transactionType;
 	 }
 	 
-	 public void Trans(int  transactionId,float  amount,LocalDate datestamp) //method overloading -3 parameters
+	 public void Trans(Long  transactionId,float  amount,LocalDate datestamp) //method overloading -3 parameters
 	 {
 		 this.transactionId=transactionId;
 		 this.amount=amount;
@@ -73,7 +73,7 @@ public class Transaction
 	 }
 	
 	 
-	 public Transaction(int  transactionId,float  amount) //Constructor with 3 parameters
+	 public Transaction(Long  transactionId,float  amount) //Constructor with 3 parameters
     {
 		 this.transactionId=transactionId;
 		 this.amount=amount;
@@ -157,7 +157,7 @@ public class Transaction
 	  public static void main (String[] args)
  {
 	
-	Transaction t =new Transaction(100,1000);  //constructor
+	Transaction t =new Transaction(100L,1000);  //constructor
 	Transaction t1 =new Transaction(LocalDate.of(2025, 7, 13), "Refund");  //constructor
 	t.Trans();
 	System.out.println("Trans ID: "+ t.getTransactionId());
@@ -165,11 +165,11 @@ public class Transaction
     System.out.println("Date: " + t1.getDate());
     System.out.println("Type: " + t1.getTransactionType());
 	Transaction t2 =new Transaction();     //method 
-	t2.Trans(100,"loan");
+	t2.Trans(100L,"loan");
 	System.out.println("Trans ID: "+ t2.getTransactionId());
 	System.out.println("Type: " + t2.getTransactionType());
 	Transaction t3 =new Transaction();    //method
-	t3.Trans(100,1000,LocalDate.of(2025, 7, 15));
+	t3.Trans(100L,1000,LocalDate.of(2025, 7, 15));
 	System.out.println("Trans ID: "+ t3.getTransactionId());
 	System.out.println("Amount: " + t3.getAmount());
 	System.out.println("Date: " + t3.getDate());

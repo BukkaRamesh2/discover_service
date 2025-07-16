@@ -5,9 +5,9 @@ import java.util.*;
 public class Transcollection {
 public static void main(String[] args) {
 
-        Transaction t1 = new Transaction(101, 1000);
-        Transaction t2 = new Transaction(102, 2000);
-        Transaction t3 = new Transaction(103, 1500);
+        Transaction t1 = new Transaction(101L, 1000);
+        Transaction t2 = new Transaction(102L, 2000);
+        Transaction t3 = new Transaction(103L, 1500);
       
 
         List<Transaction> arrayList = new ArrayList<>();
@@ -38,13 +38,13 @@ public static void main(String[] args) {
         for (Transaction t : Transhash) {
             System.out.println(t.getTransactionId());
         }
-      Set<Integer> transtree = new TreeSet<>();
+      Set<Long> transtree = new TreeSet<>();
         transtree.add(t1.getTransactionId());
         transtree.add(t2.getTransactionId());
         transtree.add(t3.getTransactionId());
   
           System.out.println("TreeSet");
-        for (int id : transtree) {
+        for (Long id : transtree) {
             System.out.println(id);
    }
     }
