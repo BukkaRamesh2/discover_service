@@ -2,11 +2,15 @@ package com.discover.entity;
 
 import java.time.LocalDate;
 
+import org.springframework.data.annotation.Id;
+
+import jakarta.persistence.Entity;
+@Entity
 public class Services {
-	public String getServiceId() {
+	public Long getServiceId() {
 		return serviceId;
 	}
-	public void setServiceId(String serviceId) {
+	public void setServiceId(String Long) {
 		this.serviceId = serviceId;
 	}
 	public String getLendingService() {
@@ -39,7 +43,8 @@ public class Services {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	private String serviceId;
+	@Id
+	private Long serviceId;
 	private String lendingService; // loan or credit
 	private String retailService; // accounts or cards or ATMS
 	private String digitalService; // Mobile apps or internet banking
