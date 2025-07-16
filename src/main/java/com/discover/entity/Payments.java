@@ -3,24 +3,24 @@ package com.discover.entity;
 import java.util.Date;
 
 public class Payments {
-	private int paymentid;
+	private Long paymentid;
 	private String paymentmode;
 	private String status;
 	private Date paymentdate;
 	
 	public Payments(int paymentid, String paymentmode, String status, Date paymentdate ) {
-		this.setPaymentid(paymentid);
+		this.setPaymentid((long) paymentid);
 		this.setPaymentmode(paymentmode);
 		this.setPaymentdate(paymentdate);
 		this.setStatus(status);
 		
 	}
 
-	public int getPaymentid() {
+	public Long getPaymentid() {
 		return paymentid;
 	}
 
-	public void setPaymentid(int paymentid) {
+	public void setPaymentid(Long paymentid) {
 		this.paymentid = paymentid;
 	}
 
