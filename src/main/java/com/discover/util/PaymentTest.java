@@ -3,7 +3,7 @@ package com.discover.util;
 import com.discover.entity.Payments;
 import java.util.Date;
 
-public class Test {
+public class PaymentTest {
 	public static void main (String args[]) {
 		Payments payment = new Payments(111, "card", "Processing", new Date());
 		
