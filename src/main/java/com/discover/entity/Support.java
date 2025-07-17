@@ -1,16 +1,23 @@
 package com.discover.entity;
 
+
+import jakarta.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "support") // Explicit table name
 public class Support {
-	private int supportId;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Add auto-generation
+    private Long supportId;
     private String customerName;
     private String description;
     private Date createDate;
     private String status;
 
     // Constructor
-    public Support(int supportId, String customerName, String description, Date date, String status) {
+    public Support(Long supportId, String customerName, String description, Date date, String status) {
         this.supportId = supportId;
         this.customerName = customerName;
         this.description = description;
@@ -18,11 +25,11 @@ public class Support {
         this.status = status;
     }
 
-    public int getSupportId() {
+    public Long getSupportId() {
         return supportId;
     }
 
-    public void setSupportId(int supportId) {
+    public void setSupportId(Long supportId) {
         this.supportId = supportId;
     }
 
