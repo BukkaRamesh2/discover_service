@@ -2,7 +2,7 @@ package com.discover.entity;
 
 public class Category {
 
-   private int categoryID;
+   private long categoryID;
    protected boolean categorytype;
    private long  categorydate;
    private String categorystatus;
@@ -13,7 +13,7 @@ public class Category {
    
 
 
-    public int getcategoryID() {
+    public long getcategoryID() {
         return categoryID;
     }
 
