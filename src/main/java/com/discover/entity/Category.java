@@ -5,7 +5,7 @@ public class Category {
    private int categoryID;
    protected boolean categorytype;
    private long  categorydate;
-   private boolean categorystatus;
+   private String categorystatus;
 
 
 
@@ -39,11 +39,11 @@ public class Category {
 		this.categorydate = categorydate;
 	}
     
-    public boolean  categoryStatus() {
+    public String categoryStatus() {
         return categorystatus;
     }
 
-    public void setcategoryStatus(boolean categorystatus) {
+    public void setcategoryStatus(String categorystatus) {
         this.categorystatus = categorystatus;
     
     }
