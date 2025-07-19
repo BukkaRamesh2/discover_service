@@ -2,6 +2,10 @@ package com.discover.entity;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Id;
+
+
+
 public class Fee {
 	
 	/*
@@ -12,7 +16,7 @@ public class Fee {
 	 * Active - Is fee is still active true: customer should pay. false : paid or not yet assigned.
 	 * description - explain why fee is added to their account or describing the fee policies.
 	 */
-
+	 @Id
     private String feeId;
 
     private String feeName;
