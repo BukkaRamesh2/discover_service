@@ -17,7 +17,7 @@ public class Loans {
     private String status;
     private Date loanDate;
 
-    public Loans(int loanId, String loanType, int creditScore, double loanAmount, double apr, String status, Date loanDate) {
+    public Loans(long loanId, String loanType, int creditScore, double loanAmount, double apr, String status, Date loanDate) {
         this.loanId = loanId;
         this.loanType = loanType;
         this.creditScore = creditScore;
