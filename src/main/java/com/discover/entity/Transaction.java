@@ -73,7 +73,7 @@ public class Transaction
 	 }
 	
 	 
-	 public Transaction(Long  transactionId,float  amount) //Constructor with 3 parameters
+	 public Transaction(Long  transactionId,float  amount) //Constructor with 2 parameters
     {
 		 this.transactionId=transactionId;
 		 this.amount=amount;
