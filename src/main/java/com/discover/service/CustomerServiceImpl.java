@@ -1,20 +1,40 @@
 package com.discover.service;
 
-import com.discover.entity.Customer;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.discover.entity.Customer;
+import com.discover.repository.CustomerRepository;
+
+@Service
 public class CustomerServiceImpl implements CustomerService{
+	
+	@Autowired
+	CustomerRepository custRepo;
 
 	@Override
 	public Customer addCustomer(Customer customer) {
 		// TODO Auto-generated method stub
 		// anthing 
-		return null;
+		return custRepo.save(customer);
+	}
+
+	public Customer getCustomer(Long Id) {
+		// TODO Auto-generated method stub
+		return custRepo.getById(Id);
 	}
 
 	@Override
-	public Customer getCustomer(Integer Id) {
+	public List<Customer> getAllCustomers() {
 		// TODO Auto-generated method stub
-		return null;
+		return custRepo.findAll();
 	}
 
+	@Override
+	public Customer updateCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		return custRepo.save(customer);
+	}
 }
