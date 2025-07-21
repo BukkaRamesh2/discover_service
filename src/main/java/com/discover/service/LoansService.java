@@ -8,12 +8,12 @@ public interface LoansService {
 
 	public Loans addLoan(Loans loan);
 
-	public Loans getLoanById(long loanId); 
+	public Loans getLoanById(Long loanId); 
 
 	public List<Loans> getAllLoans();
 
 	public Loans updateLoan(Loans loan);
 
-	public void deleteLoan(int loanId);
+	public void deleteLoan(Long loanId);
 
 }

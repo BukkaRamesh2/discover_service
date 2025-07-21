@@ -3,13 +3,25 @@ package com.discover.entity;
 import java.util.Date;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Version;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Loans {
 
-	@Id
-    private long loanId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long loanId;
     private String loanType;
     private int creditScore;
     private double loanAmount;
@@ -17,7 +29,13 @@ public class Loans {
     private String status;
     private Date loanDate;
 
-    public Loans(long loanId, String loanType, int creditScore, double loanAmount, double apr, String status, Date loanDate) {
+    @Version
+    private Integer version;
+
+    public Loans() {
+    }
+
+    public Loans(long loanId, String loanType, int creditScore, int loanAmount, double apr, String status, Date loanDate) {
         this.loanId = loanId;
         this.loanType = loanType;
         this.creditScore = creditScore;
@@ -27,57 +45,67 @@ public class Loans {
         this.loanDate = loanDate;
     }
 
-    public long getLoanId() {
+    public Long getLoanId() {
         return loanId;
+    }
+
+    public void setLoanId(Long loanId) {
+        this.loanId = loanId;
     }
 
     public String getLoanType() {
         return loanType;
     }
 
-    public int getCreditScore() {
+    public void setLoanType(String loanType) {
+        this.loanType = loanType;
+    }
+
+    public Integer getCreditScore() {
         return creditScore;
     }
 
-    public double getLoanAmount() {
+    public void setCreditScore(Integer creditScore) {
+        this.creditScore = creditScore;
+    }
+
+    public Double getLoanAmount() {
         return loanAmount;
     }
 
-    public double getApr() {
+    public void setLoanAmount(Double loanAmount) {
+        this.loanAmount = loanAmount;
+    }
+
+    public Double getApr() {
         return apr;
+    }
+
+    public void setApr(Double apr) {
+        this.apr = apr;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public Date getLoanDate() {
-        return loanDate;
-    }
-
-
-    public void setLoanType(String loanType) {
-        this.loanType = loanType;
-    }
-
-    public void setCreditScore(int creditScore) {
-        this.creditScore = creditScore;
-    }
-
-    public void setLoanAmount(double loanAmount) {
-        this.loanAmount = loanAmount;
-    }
-
-    public void setApr(double apr) {
-        this.apr = apr;
-    }
-
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Date getLoanDate() {
+        return loanDate;
     }
 
     public void setLoanDate(Date loanDate) {
         this.loanDate = loanDate;
     }
 
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
 }
