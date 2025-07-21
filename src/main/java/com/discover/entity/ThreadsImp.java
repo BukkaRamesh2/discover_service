@@ -53,8 +53,9 @@ public class ThreadsImp
             }
         }
     }
+}
 
-    public static void main(String[] args) { 
+  /*  public static void main(String[] args) { 
        Transaction t1 = new Transaction(120L, 100.0f);
         Transaction t2 = new Transaction(220L, 150.0f);
 
@@ -67,5 +68,5 @@ public class ThreadsImp
         threads1.start();
         threads2.start();
     }
-}
+}*/
 

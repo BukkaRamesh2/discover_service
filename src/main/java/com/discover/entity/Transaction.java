@@ -1,13 +1,36 @@
 package com.discover.entity;
+import java.util.Objects;
 import java.time.LocalDate;
 import java.time.LocalTime;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Version;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Transaction 
 {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	 public     Long transactionId;
 	 public     String  transactionType;
 	 public     LocalDate date;
 	 public     LocalTime time;
 	 public     float  amount;
+	  
+		@Version
+		private Integer version; // Used for optimistic locking
 	 
 	 public String getTransactionType() 
 	 {
@@ -48,9 +71,17 @@ public class Transaction
 	 public void setAmount(float amount) 
 	 {
 		 this.amount = amount;
+		 
 	 }
 	 
-	 public void Trans() 
+	 public Integer getVersion() {
+			return version;
+		}
+		public void setVersion(Integer version) {
+			this.version = version;
+		}
+}
+	/* public void Trans() 
 	 {    //method overiding
 		 System.out.println(" The transaction details:");
 	 }
@@ -176,6 +207,7 @@ public class Transaction
    t3.condition();
    }
 }
+*/
 	
 	
 

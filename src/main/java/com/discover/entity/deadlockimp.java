@@ -46,8 +46,9 @@ public class deadlockimp {
             }
         }
     }
+}
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         Transaction t1 = new Transaction(1L, 100f);
         Transaction t2 = new Transaction(2L, 150f);
 
@@ -59,4 +60,4 @@ public class deadlockimp {
         thread1.start();
         thread2.start();
     }
-}
+}*/
