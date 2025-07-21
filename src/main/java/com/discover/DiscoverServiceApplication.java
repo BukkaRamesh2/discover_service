@@ -2,6 +2,8 @@ package com.discover;
 
 import com.discover.entity.*;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,7 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DiscoverServiceApplication {
 
 	public static void main(String[] args) {
-		 
+		
+		Dotenv dotenv = Dotenv.load();
+        System.setProperty("DB_USERNAME", dotenv.get("DB_USERNAME"));
+        System.setProperty("DB_PASSWORD", dotenv.get("DB_PASSWORD"));
+
 		System.out.println("Hello Team ");
 		
 //		Employees x = new Employees((long)1, "Thor", "Son of Odin", "255 heaven dr asgard", 
