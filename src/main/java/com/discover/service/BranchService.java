@@ -10,4 +10,5 @@ public interface BranchService {
 	public Branch getBranch(Long Id);
 	public List<Branch> getAllBranches();
 	public Branch updateBranch(Branch brh);
+	public void deleteBranch(Long Id);
 }

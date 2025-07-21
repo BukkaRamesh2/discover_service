@@ -2,16 +2,28 @@ package com.discover.entity;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Version;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.DayOfWeek;
 
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Branch {
 	
 	@Id
-	private int branchId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long branchId;
 	private String branchName;
 	private String branchManager;
 	private String branchCode;
@@ -19,7 +31,15 @@ public class Branch {
 	private String status;
 	private String contact;
 	
-	public Branch(int branchId, String branchName, String branchManager, String branchCode, int timings,String status,String contact)
+	@Version
+	private Integer version;
+	
+	public Branch()
+	{
+		
+	}
+	
+	public Branch(Long branchId, String branchName, String branchManager, String branchCode, int timings,String status,String contact)
 	{
 		super();
 		this.branchId = branchId;
@@ -32,10 +52,10 @@ public class Branch {
 	}
 	
 	
-	public int getBranchId() {
+	public Long getBranchId() {
 		return branchId;
 	}
-	public void setBranchId(int branchId) {
+	public void setBranchId(Long branchId) {
 		this.branchId = branchId;
 	}
 	public String getBranchName() {
@@ -75,17 +95,11 @@ public class Branch {
 	public void setContact(String contact) {
 		this.contact = contact;
 	}
-	
-
-
-
-	@Override
-	public String toString() {
-		return "Branch [branchId=" + branchId + ", branchName=" + branchName + ", branchManager=" + branchManager
-				+ ", branchCode=" + branchCode + ", timings=" + timings + ", status=" + status + "]";
+	public Integer getVersion() {
+		return version;
 	}
-
-
-
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
 	
 }
