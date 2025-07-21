@@ -3,7 +3,6 @@ package com.discover.service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.locks.ReentrantLock;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +12,6 @@ import org.springframework.stereotype.Service;
 import com.discover.entity.Customer;
 import com.discover.exception.CustomerNotFoundException;
 import com.discover.repository.CustomerRepository;
-import com.discover.util.DeadlockDemo;
-
 import jakarta.transaction.Transactional;
 
 @Service

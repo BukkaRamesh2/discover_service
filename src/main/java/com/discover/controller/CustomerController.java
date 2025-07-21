@@ -68,5 +68,4 @@ public class CustomerController {
         customerService.deleteCustomer(customerID);
         return ResponseEntity.noContent().build();
     }
-
 }
