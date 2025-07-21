@@ -3,6 +3,8 @@ package com.discover.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,39 +17,51 @@ import org.springframework.web.bind.annotation.RestController;
 import com.discover.entity.Employee;
 import com.discover.service.EmployeeService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.websocket.server.PathParam;
 
 
 @RestController
 @RequestMapping ("/employee")
+@Tag(name = "Employee API", description = "Employee Operations")
 public class EmployeeController {
 	
 	@Autowired
-	EmployeeService employeeservice;
+	EmployeeService employeeService;
 	
 	@PostMapping ("/addEmployee")
-	public Employee addEmployee(@RequestBody Employee employee) {
-		return employeeservice.addEmployee(employee);
+	@Operation(summary = "Add Customer")
+	public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
+		Employee emp = employeeService.addEmployee(employee);
+		return new ResponseEntity<>(emp, HttpStatus.CREATED);
 	}
 	
 	@GetMapping ("/getEmployee/{employeeID}")
-	public Employee getEmployee(@PathVariable("employeeID") Long ID) {
-		return employeeservice.getEmployee(ID);
+	@Operation(summary = "Get Employee using ID")
+	public ResponseEntity<Employee> getEmployee(@PathVariable("employeeID") Long ID) {
+		Employee emp = employeeService.getEmployee(ID);
+		return ResponseEntity.ok(emp);
 	}
 	
 	@GetMapping ("/getAllEmployee")
+	@Operation(summary = "Get all Employees")
 	public List<Employee> getAllEmployee() {
-		return employeeservice.getAllEmployee();
+		return employeeService.getAllEmployee();
 	}
 	
 	@PutMapping ("/updateEmployee")
-	public Employee updateEmployee(@RequestBody Employee employee) {
-		return employeeservice.updateEmployee(employee);
+	@Operation(summary = "Update Employee")
+	public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
+		Employee emp = employeeService.updateEmployee(employee);
+		return ResponseEntity.ok(emp);
 	}
 	
 	@DeleteMapping ("/deleteEmployee/{employeeID}")
-	public void deleteEmployee(@PathVariable("employeeID") Long ID) {
-		 employeeservice.deleteEmployee(ID);
+	@Operation(summary = "Delete Employee using ID")
+	public ResponseEntity<Void> deleteEmployee(@PathVariable("employeeID") Long ID) {
+		 employeeService.deleteEmployee(ID);
+		 return ResponseEntity.noContent().build();
 	}
 
 }

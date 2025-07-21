@@ -1,9 +1,19 @@
 package com.discover.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Employee implements Comparable<Employee>{
 	/*Employee -- harsha
 	      employeeId;
@@ -18,6 +28,7 @@ public class Employee implements Comparable<Employee>{
 	
 //	Encapsulation - hiding data by making it private
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long employeeID;
 	private String firstName;
 	private String lastName;
