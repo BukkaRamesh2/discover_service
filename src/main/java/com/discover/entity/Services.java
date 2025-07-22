@@ -11,7 +11,7 @@ public class Services {
 	public Long getServiceId() {
 		return serviceId;
 	}
-	public void setServiceId(String Long) {
+	public void setServiceId(Long serviceId) {
 		this.serviceId = serviceId;
 	}
 	public String getLendingService() {

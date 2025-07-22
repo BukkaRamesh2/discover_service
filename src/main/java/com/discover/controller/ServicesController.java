@@ -17,6 +17,7 @@ import com.discover.service.ServicesService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.websocket.server.PathParam;
 
 @RestController
 @RequestMapping("services")
@@ -28,7 +29,7 @@ public class ServicesController {
 	
 	@GetMapping("getService/{serviceId}")
 	@Operation(summary = "Get service by serviceId")
-	public Services getService(@PathVariable("ServiceId") Long serviceId) {
+	public Services getService(@PathParam("ServiceId") Long serviceId) {
 		return servicesservice.getService(serviceId);
 	}
 	
@@ -52,7 +53,7 @@ public class ServicesController {
 	
 	@DeleteMapping("deleteService/{serviceId}")
 	@Operation(summary = "Delete service")
-	public void deleteService(@PathVariable("ServiceId") Long serviceId) {
+	public void deleteService(@PathParam("ServiceId") Long serviceId) {
 		servicesservice.deleteService(serviceId);
 	}
 }
