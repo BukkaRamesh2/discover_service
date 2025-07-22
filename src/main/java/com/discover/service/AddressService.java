@@ -10,5 +10,6 @@ public interface AddressService {
 	public Address getAddress(Long Id);
 	public List<Address> getAllAddresss();
 	public Address updateAddress(Address address);
-
+	public void  deleteAddress(Long id);
+	
 }
