@@ -14,4 +14,6 @@ public interface ServicesService {
 
 	public List<Services> getAllService();
 
+	public void deleteService(Long serviceId);
+
 }

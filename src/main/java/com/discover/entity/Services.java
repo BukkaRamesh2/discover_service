@@ -1,10 +1,11 @@
 package com.discover.entity;
 
 import java.time.LocalDate;
-
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 @Entity
 public class Services {
 	public Long getServiceId() {
@@ -44,6 +45,7 @@ public class Services {
 		this.status = status;
 	}
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long serviceId;
 	private String lendingService; // loan or credit
 	private String retailService; // accounts or cards or ATMS
