@@ -18,11 +18,13 @@ import com.discover.entity.Cards;
 import com.discover.service.CardsService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.websocket.server.PathParam;
 
 @RestController
 @RequestMapping("/card")
+@SecurityRequirement(name = "bearerAuth")
 @Tag(name="Cards API", description ="Operations related to cards")
 public class CardController {
 	@Autowired
