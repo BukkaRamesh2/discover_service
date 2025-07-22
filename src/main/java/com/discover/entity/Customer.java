@@ -20,70 +20,140 @@ import lombok.NoArgsConstructor;
 public class Customer {
 	
 	
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long customerID;
-	private String firstName;
-	private String lastName;
-	private String address;
-	private String email;
-	private Long phoneNumber;
-	private boolean status;
-	  
-	@Version
-	private Integer version; // Used for optimistic locking
 	
-	public Long getCustomerID() {
-		return customerID;
-	}
-	public void setCustomerID(Long customerID) {
-		this.customerID = customerID;
-	}
-	public String getFirstName() {
-		return firstName;
-	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public Long getPhoneNumber() {
-		return phoneNumber;
-	}
-	public void setPhoneNumber(Long phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-	public boolean isStatus() {
-		return status;
-	}
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
+//	customerID;
+//	firstName;
+//	lastName;
+//	address;
+//	email;
+//	phoneNumber;
+//	gender;
+//	status;
 	
-	
-	
-	public Integer getVersion() {
-		return version;
-	}
-	public void setVersion(Integer version) {
-		this.version = version;
-	}
-	
-	
-	
+	/*
+	 * 
+	 *   gitbash installl
+	 *   
+	 *   git clone https://
+	 *   
+	 *   cd discover_service
+	 *   
+	 *   git checkout feature/ramesh
+	 *   
+	 *   import the project into eclipse
+	 * 
+	 * 
+	 * 
+	 *   Address  -- ganesh
+	 *   
+	 *      addressId
+	 *      lane
+	 *      city
+	 *      state
+	 *      zipcode
+	 *      status
+	 *   
+	 *   
+	 *   Transaction  -- bhargavi  
+	 *      transactionId
+	 *      transactionType
+	 *      datetime
+	 *      amount
+	 *      branchCode
+	 *   
+	 *   Accounts  -- harika  -- intro
+	 *     accountId
+	 *     accountNumber
+	 *     accountType
+	 *     balance
+	 *     createdDate
+	 *     status
+	 *   
+	 *   Employees -- harsha
+	 *     employeeId;
+			firstName;
+			lastName;
+			address;
+			email;
+			phoneNumber;
+			gender;
+			status;
+	 *    
+	 *   Branches  -- srihari
+	 *    branchId
+	 *    branchName
+	 *    branchManager
+	 *    branchCode
+	 *    timings
+	 *    status
+	 *   
+	 *   Services  -- keerthi
+	 *   
+	 *    serviceId;
+	 *    lendingServices
+	 *    retailService
+	 *    digitalService
+	 *    createdDate
+	 *    status
+	 *   
+	 *   Documents  -- lokesh
+	 *     documentId
+	 *     documentType
+	 *     issueDate
+	 *     status
+	 *     
+	 *   Cards -- sathya
+	 *     cardId
+	 *     cardType
+	 *     issueDate
+	 *     expiryDate
+	 *     cardLimit
+	 *     status
+	 *   
+	 *   Loans --  dinesh
+	 *      lonaId
+	 *      LonaType
+	 *      creditScore
+	 *      loanAmount
+	 *      apr
+	 *      loanDate
+	 *      status
+	 *      
+	 *   support -- srinath
+	 *         supportId
+	 *         customerName
+	 *         description
+	 *         createdDate
+	 *         status
+	 *   
+	 *    rewards -- vijaya
+	 *      rewardsId
+	 *      rewardsName
+	 *      rewardsPoints
+	 *      issueDate
+	 *      status
+	 *    
+	 *    category -- vamshi  -- spending category
+	 *      categoryId
+	 *      categoryType
+	 *      date
+	 *      status
+	 *      
+	 *    
+	 *     payments -- tilak
+	 *        paymentId
+	 *        paymentMode 
+	 *        datetime
+	 *        status
+	 *     
+	 *   
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
+
+}
