@@ -14,4 +14,7 @@ public interface DocumentsService {
 
 	public Documents updateDocuments(Documents doc);
 
+	public void deleteDocuments(Long documentsID);
+		
+	   
 }
