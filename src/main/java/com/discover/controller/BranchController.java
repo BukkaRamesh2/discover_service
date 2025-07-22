@@ -4,6 +4,7 @@ import com.discover.entity.Branch;
 import com.discover.service.BranchService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.websocket.server.PathParam;
 
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/branch")
 @Tag(name = "Branch API", description = "Operations related to Branches")
+@SecurityRequirement(name = "bearerAuth")
 public class BranchController {
 
 	@Autowired
