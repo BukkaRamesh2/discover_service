@@ -17,12 +17,14 @@ import com.discover.entity.Documents;
 import com.discover.service.DocumentsService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.websocket.server.PathParam;
 
 @RestController
 @RequestMapping("/documents")
 @Tag(name = "Documents API", description = "Operations related to Documents")
+@SecurityRequirement(name = "bearerAuth") 
 public class DocumentsController {
 	@Autowired
 	DocumentsService DctsService  ;
