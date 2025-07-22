@@ -18,12 +18,14 @@ import com.discover.entity.Address;
 import com.discover.service.AddressService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.websocket.server.PathParam;
 
 @RestController
 @RequestMapping("/address")
 @Tag(name = "Address API", description = "Operations related to address")
+@SecurityRequirement(name = "bearerAuth") // This applies JWT auth to all endpoints in this controller
 public class AddressController {
 	
 	
