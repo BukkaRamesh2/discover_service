@@ -14,4 +14,6 @@ public interface SupportService {
     public List<Support> getAllSupports();
 
     public void delete(Long supportId);
+
+	Support updateSupport(Support support);
 }
