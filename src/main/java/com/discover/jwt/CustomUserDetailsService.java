@@ -1,4 +1,4 @@
-package com.discover.jwt;
+/*package com.discover.jwt;
 
 
 import org.springframework.security.core.userdetails.User;
@@ -54,3 +54,4 @@ public class CustomUserDetailsService implements UserDetailsService {
         return matches;
     }
 }
+*/
