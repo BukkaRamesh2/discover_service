@@ -2,13 +2,16 @@ package com.discover.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.discover.repository.PaymentsRepository;
 import com.discover.entity.Payments;
 
 public interface PaymentsService {
 
-	public Payments addPayments(Payments payment); //you can define method with body 
+	public Payments addPayments(Payments payment); 
 
-	public Payments getPayments(Long paymentid); //you can define method with body 
+	public Payments getPayments(Long paymentid); 
 
 	public List<Payments> getAllPayments();
 
