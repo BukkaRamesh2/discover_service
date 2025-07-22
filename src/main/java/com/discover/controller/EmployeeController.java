@@ -18,13 +18,15 @@ import com.discover.entity.Employee;
 import com.discover.service.EmployeeService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.websocket.server.PathParam;
 
 
 @RestController
-@RequestMapping ("/employee")
+@RequestMapping ("api/employee")
 @Tag(name = "Employee API", description = "Employee Operations")
+@SecurityRequirement(name = "bearerAuth") // This applies JWT auth to all endpoints in this controller
 public class EmployeeController {
 	
 	@Autowired

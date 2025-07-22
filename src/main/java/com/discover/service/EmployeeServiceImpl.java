@@ -9,6 +9,8 @@ import com.discover.entity.Employee;
 import com.discover.exception.EmployeeNotFoundException;
 import com.discover.repository.EmployeeRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class EmployeeServiceImpl implements EmployeeService{
 	
@@ -16,6 +18,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@Autowired
 	EmployeeRepository employeeRepository;
 	
+	@Transactional
 	@Override
 	public Employee addEmployee(Employee employee) {
 		if (employee.getEmployeeID() != null) {
@@ -30,6 +33,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 				.orElseThrow(() -> new EmployeeNotFoundException("Employee ID " + ID + "not found"));
 	}
 	
+	@Transactional
 	@Override
 	public Employee updateEmployee(Employee employee) {
 		if (employee.getEmployeeID() == null) {

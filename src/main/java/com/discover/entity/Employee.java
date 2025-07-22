@@ -39,25 +39,6 @@ public class Employee implements Comparable<Employee>{
 	private String status;
 	
 	
-// method overloading
-	public Employee() {
-		
-	}
-	
-	public Employee(Long employeeID, String firstName, String lastName, 
-					String address, String email, Long phoneNumber, String gender, 
-					String status) {
-		
-		this.employeeID = employeeID;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.address = address;
-		this.email = email;
-		this.phoneNumber = phoneNumber;
-		this.gender = gender;
-		this.status = status;
-	}
-	
 	public void setEmployeeID(Long employeeID) {
 		this.employeeID = employeeID;
 		
