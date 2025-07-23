@@ -2,10 +2,11 @@ package com.discover.entity;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity; 
 import jakarta.persistence.Id;
+import jakarta.persistence.Version; 
 
-
-
+@Entity 
 public class Fee {
 	
 	/*
@@ -16,7 +17,7 @@ public class Fee {
 	 * Active - Is fee is still active true: customer should pay. false : paid or not yet assigned.
 	 * description - explain why fee is added to their account or describing the fee policies.
 	 */
-	 @Id
+	@Id
     private String feeId;
 
     private String feeName;
@@ -28,6 +29,7 @@ public class Fee {
     private boolean Active;
 
     private String description;
+    
 
     public Fee() {
         
@@ -58,6 +60,7 @@ public class Fee {
         return deadline;
     }
 
+    // 5. REVERTED: Changed back to getActive() as requested.
     public boolean getActive() {
         return Active;
     }
@@ -89,4 +92,6 @@ public class Fee {
     public void setDescription(String description) {
         this.description = description;
     }
+    
+  
 }
