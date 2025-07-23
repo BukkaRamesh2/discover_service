@@ -417,8 +417,73 @@ public class Customer {
 	 *      
 	 *      
 	 *      
-	 *    
-	 *    
+	 *       Spring security and JWT token 
+	 *       where the applicaion is going to be authenticated with username and password 
+	 *       spring securoty lib is part of CustomUserDetailsService class    implementrs UserDetailsService
+	 *       jwt api
+	 *       jwt impl 
+	 *       jwt jackson
+	 *       
+	 *       token -- bearer token 
+	 *       applicaion.prop / applicaion.yml
+	 *       jwt token session -- 60 
+	 *       secret : hash256
+	 *       
+	 *       entire controllers to access any methods we use jsonwebtoken -- with out bearer token if you access the api it has to give 403 error
+	 *       
+	 *       1. CustomUserDetailsService(PasswordEncoder Hash256)  // crypto spring secuirty 
+	 *       user username - password
+	 *       
+	 *       @Overriden
+	 *       loadUSerByUserName(username)
+	 *        password
+	 *        
+	 *        autheusers
+	 *        
+	 *       2. JWTUtil class-- component 
+	 *          secret
+	 *          expiration
+	 *          
+	 *          extractUserName()
+	 *          extractExipration()
+	 *          extractClaim()
+	 *          isTokenExpired()
+	 *          generateToekn()  --- bearer token once user name and password is correct then the this method witll be called
+	 *          createToken()
+	 *          validateToken()
+	 *          getSignKey(base64 encoder )
+	 *       3.  JWTAuthenticationFilter class -- onceperRequestFilter
+	 *          
+	 *          @override
+	 *          doFilterInternal()request, response, httpservlet, 
+	 *        4.SpringSecurity class 
+	 *          @Configutration
+	 *          @EnableWebSecurity
+	 *            
+	 *            JWTAuthenticationFilter
+	 *            filterChain() ---- 
+	 *            /swagger-ui.html ----  permital
+	 *            /v3/api-docs  -- permitAll()
+	 *        5. AuthController
+	 *           /auth
+	 *           /login  -- loginuser object entity class  -- 
+	 *           username -- passowrd 
+	 *           validate the users      
+	 *          
+	 *          
+	 *          
+	 *          
+	 *          
+	 *          
+	 *          
+	 *          
+	 *          
+	 *          
+	 *          
+	 *          
+	 *          
+	 *          
+	 *          
 	 *    
 	 *    
 	 *    
