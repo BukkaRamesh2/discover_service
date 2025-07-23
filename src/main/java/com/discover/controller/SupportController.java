@@ -45,6 +45,7 @@ public class SupportController {
         support.setSupportId(id); // Ensure ID matches path
         Support updated = supportService.updateSupport(support);
         return ResponseEntity.ok(updated);
+        
     }
 
     @GetMapping("/getById/{id}")
