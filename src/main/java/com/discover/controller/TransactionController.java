@@ -20,10 +20,12 @@ import com.discover.service.Transactionservice;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.websocket.server.PathParam;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 @RestController
-@RequestMapping("/transaction")
+@RequestMapping("/api/transaction")
 @Tag(name = "Transaction API", description = "Operations related to transactions")
+@SecurityRequirement(name = "bearerAuth") // JWT token for secuirty using 
 public class TransactionController {
 
     @Autowired

@@ -18,6 +18,9 @@ import jakarta.transaction.Transactional;
 
 @Service
 public class TransactionServiceImplementation implements Transactionservice {
+	
+	private final Map<Long, Transaction> transaction =  new HashMap();
+	
 
     @Autowired
     private TransactionRepository transactionRepository;
