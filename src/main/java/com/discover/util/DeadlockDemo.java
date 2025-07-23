@@ -1,6 +1,5 @@
 package com.discover.util;
 
-<<<<<<< HEAD
 /**
  * deadlock situation.
  * Two threads try to acquire two locks in different orders, causing deadlock.
@@ -57,8 +56,6 @@ public class DeadlockDemo {
         DeadlockDemo demo = new DeadlockDemo();
         demo.createDeadlock();
     }
-=======
-public class DeadlockDemo {
 	
 	
 	private final Object r1 = new Object();
@@ -93,5 +90,4 @@ public class DeadlockDemo {
 	}
 
 
->>>>>>> refs/remotes/origin/main
 }
