@@ -2,7 +2,7 @@ package com.discover.entity;
 
 public class Category {
 
-   private long categoryID;
+   protected long categoryID;
    protected boolean categorytype;
    private long  categorydate;
    private String categorystatus;
@@ -47,5 +47,11 @@ public class Category {
         this.categorystatus = categorystatus;
     
     }
+
+	public void displayinfo() {
+		// TODO Auto-generated method stub
+		
+		
+	}
    
 }
