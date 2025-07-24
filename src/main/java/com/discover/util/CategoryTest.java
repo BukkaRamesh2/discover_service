@@ -33,7 +33,7 @@ public class CategoryTest extends Category{
 	}
 	
 	
-	public void test(){
+	public void categorytest(){
 		
 	}
 
