@@ -472,6 +472,54 @@ public class Customer {
 	 *          
 	 *          
 	 *          
+	 *          My DCU application   -- 8080
+	 *           // customers
+	 *          
+	 *          My Chase Service -- 8081
+	 *            //getcustomer list 
+	 *           
+	 *           
+	 *          define ports in applicaiont.properties
+	 *          
+	 *          
+	 *          
+	 *          Rest Templete 
+	 *          
+	 *          The communication between multiple service of spring boot applicaions we call it as sync / async
+	 *          
+	 *          sync 
+	 *          --RestTemplete   --- simple entity 
+	 *          --Webclient ---  library (Webflux) -- reactive way of rest template design -- entites -- Mono, 
+	 *          
+	 *          Async --  non blocking way 
+	 *           
+	 *          Kafka    -- lot of configuration
+	 *          ActiveMQ  -- less configuration
+	 *          RabbitMQ  -- 
+	 *          
+	 *          Publisher  -- publish the API calls
+	 *          subscriber -- -- subscribe the data 
+	 *          
+	 *          
+	 *          1. library added
+	 *          2. configuration class
+	 *          3. Rest tempate service   -- calling externaml service from service a to service b 
+	 *          4. try hitting the API via controller 
+	 *          
+	 *          @configuration 
+	 *          @bean 
+	 *          RestTempate
+	 *          
+	 *          @WebClient 
+	 *          
+	 *          
+	 *          service -- 
+	 *          callExternamAPI -- 
+	 *          string -- entire object 
+	 *          url -- http://localhost:8080/callExternalMethod
+	 *          
+	 *          
+	 *          
 	 *          
 	 *          
 	 *          
