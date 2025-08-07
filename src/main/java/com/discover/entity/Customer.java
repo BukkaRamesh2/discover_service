@@ -21,6 +21,8 @@ import lombok.NoArgsConstructor;
 public class Customer {
 	
 	
+<<<<<<< HEAD
+=======
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long customerID;
@@ -891,7 +893,16 @@ CodeDeploy — take your application from local and deploy it to EC2 ECS EKS
 	 * 
 	 */
 	
+>>>>>>> 0e302fe619ca2c6ec441a8bdc80b889509ad56e0
 	
+//	customerID;
+//	firstName;
+//	lastName;
+//	address;
+//	email;
+//	phoneNumber;
+//	gender;
+//	status;
 	
 	/*
 	 * 
@@ -1010,7 +1021,7 @@ CodeDeploy — take your application from local and deploy it to EC2 ECS EKS
 	 *        status
 	 *     
 	 *   
-	 *     --- sai -- entity
+	 * 
 	 * 
 	 * 
 	 * 
