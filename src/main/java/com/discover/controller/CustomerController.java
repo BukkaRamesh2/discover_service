@@ -25,7 +25,7 @@ import jakarta.websocket.server.PathParam;
 
 
 @RestController
-@RequestMapping("/api/customers")
+@RequestMapping("/discover/customers")
 @Tag(name = "Customer API", description = "Operations related to customers")
 @SecurityRequirement(name = "bearerAuth") // This applies JWT auth to all endpoints in this controller
 public class CustomerController {
