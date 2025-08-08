@@ -40,10 +40,12 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     public boolean authenticateUser(String username, String password) {
         System.out.println("Attempting to authenticate user: " + username);
-        String storedPassword = users.get(username);
-        if (storedPassword == null) {
+       // String userName = users.get(username); /// password  get username provided 
+        String storedPassword = users.get(username);  // verfiy from DB
+        if (username == null || storedPassword == null) {
             System.out.println("User not found: " + username);
             return false;
+
         }
         
         boolean matches = passwordEncoder.matches(password, storedPassword);

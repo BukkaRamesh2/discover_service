@@ -15,7 +15,7 @@ import java.util.Map;
 @Tag(name = "Authentication", description = "Authentication management APIs")
 public class AuthController {
 
-    @Autowired
+    @Autowired   // inject a bean 
     private JwtUtil jwtUtil;
 
     @Autowired

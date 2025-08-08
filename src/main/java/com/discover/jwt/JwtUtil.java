@@ -37,12 +37,12 @@ public class JwtUtil {
     }
 
     private Claims extractAllClaims(String token) {
-        return Jwts.parserBuilder()
-                .setSigningKey(getSignKey())
-                .build()
-                .parseClaimsJws(token)
-                .getBody();
-    }
+        return Jwts.parserBuilder()   ///create JWtParser
+                .setSigningKey(getSignKey())   // set signing key verifying JWT Signature 
+                .build()   // builds the parser 
+                .parseClaimsJws(token)   // parse the jwt token 
+                .getBody();   //extracts the body which claims Object  
+    } 
 
     private Boolean isTokenExpired(String token) {
         return extractExpiration(token).before(new Date());
