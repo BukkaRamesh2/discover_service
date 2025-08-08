@@ -1,0 +1,19 @@
+<<<<<<< HEAD
+=======
+server:
+  port: 8080
+
+
+spring:  
+  application:
+    name: DISCOVER-SERVICE 
+    
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true 
+    serviceUrl:
+      defaultZone: 'http://localhost:8761/eureka/'
+  instance:
+    prefer-ip-address: true 
+>>>>>>> refs/remotes/origin/main
