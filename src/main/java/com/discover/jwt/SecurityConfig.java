@@ -25,11 +25,13 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
+        	.headers(headers -> headers.frameOptions(frame -> frame.disable())) //  Needed for H2 console -- used bcz of added spring security
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 // Public endpoints
                 .requestMatchers("/auth/login").permitAll()
                 .requestMatchers("/auth/register").permitAll()
+                .requestMatchers("/rewards/**").permitAll() //Temporarily Allow the Endpoint Without Auth (for testing swagger working)
                 
                 // Swagger UI endpoints - allow access without authentication
                 .requestMatchers("/swagger-ui/**").permitAll()
@@ -38,6 +40,9 @@ public class SecurityConfig {
                 .requestMatchers("/swagger-resources/**").permitAll()
                 .requestMatchers("/webjars/**").permitAll()
                 
+
+                // H2 Console
+                .requestMatchers("/h2-console/**").permitAll() //  Add this bcz of spring security
                 
                 // All other endpoints require authentication
                 .anyRequest().authenticated()

@@ -1,12 +1,15 @@
 package com.discover.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.discover.entity.Rewards;
 import com.discover.repository.RewardsRepository;
 
+@Service
 public class RewardsServiceImpl implements RewardsService{
 
 	@Autowired
@@ -21,7 +24,7 @@ public class RewardsServiceImpl implements RewardsService{
 	@Override
 	public Rewards getRewards(Long Id) {
 		// TODO Auto-generated method stub
-		return rewardRepo.getById(Id);
+		return rewardRepo.findById(Id).orElse(null);
 	}
 
 	@Override

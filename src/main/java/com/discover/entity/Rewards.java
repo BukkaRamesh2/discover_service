@@ -2,8 +2,16 @@ package com.discover.entity;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Rewards {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	//encapsulation
 	private long rewardsId; 
 	private String rewardsName;
