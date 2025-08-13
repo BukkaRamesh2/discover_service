@@ -2,8 +2,11 @@ package com.discover;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication  // annotation
+@ComponentScan(basePackages = "com.discover")
+//@EnableDiscoveryClient   
 public class DiscoverServiceApplication {
 
 	public static void main(String[] args) {

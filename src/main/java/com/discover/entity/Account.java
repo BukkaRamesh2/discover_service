@@ -2,8 +2,12 @@ package com.discover.entity;
 
 import java.time.LocalDate;
 
-public class Account {
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity
+public class Account {
+	@Id
     private Long accountId;
     private String accountNumber;
     private String accountType;
@@ -11,14 +15,55 @@ public class Account {
     private LocalDate createdDate;
     private String status;
 
-    // Getters and setters (only for balance here for brevity)
+    
     public double getBalance() {
         return balance;
     }
 
     public void setBalance(double balance) {
         this.balance = balance;
+      
     }
 
-    // You can add other getters/setters similarly or generate them using IDE
+	public Long getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(Long accountId) {
+		this.accountId = accountId;
+	}
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public String getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+
+	public LocalDate getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(LocalDate createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+ 
+    
 }
